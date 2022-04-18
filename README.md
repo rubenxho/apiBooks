@@ -4,7 +4,7 @@
 - Modules: "cors", "express", "mysql2", "dotenv" , "nodemon"
 
 # Author Routes
-- get/books
+- get/authors
 ```console
 {error: boolean, data: author[]}
 ```  
@@ -51,4 +51,9 @@ created: null sino se ha creado, number con el id del autor.
 {error: boolean, updated:boolean}
 updated: true si se modifico, false no se modifico.
 ``` 
-
+# Login Routes
+- post/login
+```console
+{error: boolean, found:boolean, data: author[]}
+found: true si existe el id, false sino existe.
+```  

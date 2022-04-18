@@ -6,6 +6,7 @@ const cors = require('cors');
 //Import routes
 const authorRoutes = require("./routes/authorRoutes");
 const bookRoutes = require("./routes/bookRoutes");
+const loginRoutes = require("./routes/loginRoutes");
 
 //Config
 app.use(cors());
@@ -20,6 +21,8 @@ app.set("port", process.env.PORT || 3000);
 //Router
 app.use(authorRoutes);
 app.use(bookRoutes);
+app.use(loginRoutes);
+
 
 
 //Endpoint Doesnt found
