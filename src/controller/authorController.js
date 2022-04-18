@@ -50,6 +50,13 @@ const postAuthor = (request,response)=>{
 
 const putAuthor = (request, response)=>{
     const id = request.params.id;
+
+    for(let property in request.body){
+        if(request.body[property]===''){
+            request.body[property]=null
+        }
+    }
+
     const {first_name, last_name}= request.body;
     const params = [first_name, last_name,id]
     let sql = `UPDATE author SET first_name = COALESCE(?, first_name), last_name = COALESCE(?, last_name) WHERE id_author=?`
