@@ -5,7 +5,7 @@ const Author = require("../models/author")
 
 const getBooks = (request,response)=>{
     let books = [];
-    const sql = `SELECT id_book, name, isbn, id_author, first_name, last_name FROM book INNER JOIN author ON (author.id_author = book.author)`;
+    const sql = `SELECT id_book, name, isbn, image, id_author, first_name, last_name FROM book INNER JOIN author ON (author.id_author = book.author)`;
 
     connection.query(sql,(err,res)=>{
         if(err){
@@ -23,7 +23,7 @@ const getBooks = (request,response)=>{
 const getBook = (request,response)=>{
     const {id} = request.params;
     const params = [id];
-    const sql = `SELECT id_book, name, isbn, id_author, first_name, last_name FROM book INNER JOIN author ON (author.id_author = book.author) WHERE id_book=?`;
+    const sql = `SELECT id_book, name, isbn, image, id_author, first_name, last_name FROM book INNER JOIN author ON (author.id_author = book.author) WHERE id_book=?`;
     let books = [];
 
     connection.query(sql,params,(err,res)=>{
@@ -90,7 +90,7 @@ function bookModel(res){
 
     books = res.map((value)=>{
         author = new Author(value.id_author, value.first_name, value.last_name);
-        book = new Book(value.id_book, value.name, value.isbn, author);
+        book = new Book(value.id_book, value.name, value.isbn, value.image, author);
         return book
     })
 
