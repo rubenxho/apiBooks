@@ -38,8 +38,6 @@ const postFavorite = (request,response)=>{
 }
 
 const deleteFavorite = (request,response)=>{
-    console.log("delete")
-    console.log(request.params.id)
     const id= request.params.id
     const params=[id]
     let sql = `DELETE FROM favorite WHERE id_favorite=?`

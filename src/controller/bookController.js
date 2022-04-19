@@ -119,7 +119,6 @@ const postBook = (request,response)=>{
 
     connection.query(sql, params,(err,res)=>{
         if(err){
-            console.log(err)
             response.send({error: true, created: null});
         }
         else{
