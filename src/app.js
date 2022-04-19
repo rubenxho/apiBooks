@@ -4,9 +4,11 @@ const app = express();
 const cors = require('cors');
 
 //Import routes
+const authRoutes = require("./routes/authRoutes");
 const authorRoutes = require("./routes/authorRoutes");
 const bookRoutes = require("./routes/bookRoutes");
-const loginRoutes = require("./routes/loginRoutes");
+const favoriteRoutes = require("./routes/favoriteRoutes")
+
 
 //Config
 app.use(cors());
@@ -19,10 +21,10 @@ app.set("port", process.env.PORT || 3000);
 
 
 //Router
+app.use(authRoutes);
 app.use(authorRoutes);
 app.use(bookRoutes);
-app.use(loginRoutes);
-
+app.use(favoriteRoutes);
 
 
 //Endpoint Doesnt found

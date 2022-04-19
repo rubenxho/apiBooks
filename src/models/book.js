@@ -6,6 +6,8 @@ class Book{
         this.isbn = isbn;
         this.image=image
         this.author = author;
+        this.favorite;
+        this.id_favorite;
     }
 }
 

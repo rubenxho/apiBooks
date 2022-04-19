@@ -34,9 +34,9 @@ const getAuthor = (request,response)=>{
 }
 
 const postAuthor = (request,response)=>{
-    const {first_name, last_name, email, password} = request.body;
-    const params = [first_name, last_name, email, password];
-    const sql = `INSERT INTO author (first_name, last_name, email, password) VALUES (?,?,?,?)`
+    const {first_name, last_name} = request.body;
+    const params = [first_name, last_name];
+    const sql = `INSERT INTO author (first_name, last_name) VALUES (?,?)`
 
     connection.query(sql, params,(err,res)=>{
         if(err){
@@ -50,7 +50,7 @@ const postAuthor = (request,response)=>{
 
 const putAuthor = (request, response)=>{
     const id = request.params.id;
-
+    
     for(let property in request.body){
         if(request.body[property]===''){
             request.body[property]=null
