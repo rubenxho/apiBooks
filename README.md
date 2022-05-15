@@ -1,7 +1,7 @@
 # APIREST BOOKS
 
 - Run:  npm run dev
-- Modules: "cors", "express", "mysql2", "dotenv" , "nodemon"
+- Modules: "cors", "express", "mysql2", "dotenv" , "nodemon" for dev
 
 # Author Routes
 #### Rutas para el modulo de author
